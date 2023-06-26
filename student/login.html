@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<!-- Mirrored from waleedabdo.com/student/login by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 Jun 2023 04:05:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../web/scss/libs/all.min.html">
+    <link rel="stylesheet" href="../web/scss/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="../web/scss/enter.css">
+    <script src="../../ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+    <script src="../../cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>  
+    <script src="../../cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <title>signup</title>
+</head>
+<body>
+
+
+<div class="content">
+    <style>
+    .js-cookie-consent {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 99999999999;
+        background: #fff3cd;
+        border: 1px solid #ffecb5;
+        padding: 0.7rem 2rem;
+        border-radius: .25rem;
+        line-height: 1.9rem;
+        text-align: center;
+        display: flex;
+        vertical-align: middle;
+        align-items: center;
+        justify-content: space-between;
+        direction: rtl;
+    }
+    .cookie-consent__message {
+        font-size: 0.9rem;
+    }
+    .js-cookie-consent-agree {
+        background: #ffc107;
+        border: 1px solid #ffc107;
+        font-weight: 400;
+        line-height: 1.5;
+        text-decoration: none;
+        padding: .3rem .75rem;
+        font-size: 0.8rem;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        vertical-align: middle;
+        align-items: center;
+        margin-right: 15px;
+        text-align: center;
+        height: 30px;
+    }
+    @media (max-width: 991.98px) {
+        .js-cookie-consent {
+            width: 90%;
+            margin: auto;
+        }
+    }
+    @media (max-width: 575.98px) {
+        .js-cookie-consent {
+            display: block;
+            padding: 0.5rem 0.5rem;
+            width: 95%;
+            margin: auto;
+        }
+        .js-cookie-consent-agree {
+            display: flex;
+            margin: 5px auto 0 auto;
+        }
+    }
+</style>
+
+<div class="js-cookie-consent cookie-consent">
+
+    <span class="cookie-consent__message">
+        نحن نستخدم ملفات تعريف الارتباط (كوكيز) لفهم كيفية استخدامك لموقعنا ولتحسين تجربتك. من خلال الاستمرار في استخدام موقعنا ، فإنك توافق على استخدامنا لملفات تعريف الارتباط.
+    </span>
+
+    <button class="js-cookie-consent-agree cookie-consent__agree">
+        موافق
+    </button>
+
+</div>
+
+    <script>
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'waleedabdo.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + '';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+    
+    <div class="signup">
+        <div class="enter">
+
+            <div class="row">
+
+                <div class="col-xl-6 order-xl-1 order-2">
+                    <div class="form-container">
+                        <div class="form-card">
+                            <img src="../web/images/rocket.png" alt="rocket">
+                            <div class="form-box-title">تسجيل الدخول</div>
+                            <form action="https://waleedabdo.com/student/login" method="post" class="form">
+                                <input type="hidden" name="_token" value="ei4wWl8soTCrCoZtN4v4FhMbXSFKMbvn1LjY77BW">                                <div class="form-group focus-on-load">
+                                    <label>رقم تليفون الطالب</label>
+                                    <input type="tel" name="phone" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>الباسورد</label>
+                                    <input type="password" name="password" class="form-control">
+                                </div>
+
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input">
+                                    <p class="form-check-label" for="exampleCheck1">تذكر حسابى المرة القادمة</p>
+                                </div>
+
+                                <button type="submit" class="create-account-btn">
+                                    <svg class="svg-icon" viewBox="0 0 20 20">
+                                        <path fill="none" d="M18.737,9.691h-5.462c-0.279,0-0.527,0.174-0.619,0.437l-1.444,4.104L8.984,3.195c-0.059-0.29-0.307-0.506-0.603-0.523C8.09,2.657,7.814,2.838,7.721,3.12L5.568,9.668H1.244c-0.36,0-0.655,0.291-0.655,0.655c0,0.36,0.294,0.655,0.655,0.655h4.8c0.281,0,0.532-0.182,0.621-0.45l1.526-4.645l2.207,10.938c0.059,0.289,0.304,0.502,0.595,0.524c0.016,0,0.031,0,0.046,0c0.276,0,0.524-0.174,0.619-0.437L13.738,11h4.999c0.363,0,0.655-0.294,0.655-0.655C19.392,9.982,19.1,9.691,18.737,9.691z"></path>
+                                    </svg>
+                                    تسجيل الدخول
+                                </button>
+
+                                <div class="form-group" style="text-align:center;">
+                                    <script src="../../www.google.com/recaptcha/apid41d.js?" async defer></script>
+
+                                    <div data-sitekey="6LcPrGYaAAAAAI1Tu-gowmeJrgj-lCg1bxWv2ApJ" class="g-recaptcha"></div>
+                                    <span class="text-danger" id="captcha-error"></span>
+                                </div>
+
+                                 <p class="text text-right">فى حالة فقدان الباسورد يرجى التواصل معنا عن طريق الواتساب من خلال اللينك التالى <a href="https://wa.me/1113305996" target="_blank"> تواصل معنا </a></p>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-6 order-xl-2 order-1">
+                    <div class="enter-info text-center">
+                        <span>مرحبا بكم في</span>
+                        <a href="index.html">
+                            <img class="down-logo" src="../web/images/logo.png" alt="">
+                        </a>
+                        <p class="text">مرحباً بكم فى مكتبة الدكتور محمد عبد السلام  الإلكترونية المتخصصة فى العلوم الفيزيائية</p>
+                        <div class="tab-switch d-flex justify-content-center">
+                            <a href="register.html">
+                                <p class="signup-tab tab">انشاء حساب</p>
+                            </a>
+                            <a href="login.html">
+                                <p class="login-tab tab active">تسجيل الدخول</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Libs Scripts -->
+<script src="../web/js/libs/jquery-3.2.1.min.js"></script>
+<script src="../web/js/libs/popper.js"></script>
+<script src="../web/js/libs/bootstrap.min.js"></script>
+<!-- Main Script -->
+<script src="../web/js/enter.js"></script>
+<!-- hexagon -->
+
+<script>
+    
+    $('#contactus').on('submit', function(){
+    var v = grecaptcha.getResponse();
+        if(v.length == 0)
+        {
+            document.getElementById('captcha-error').innerHTML="لا يمكنك ترك كود Captcha فارغًا";
+            return false;
+        }
+        else
+        {
+            document.getElementById('captcha-error').innerHTML="اكتمل اختبار Captcha";
+            return true; 
+        }
+    });
+</script>
+
+</body>
+
+<!-- Mirrored from waleedabdo.com/student/login by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 25 Jun 2023 04:05:51 GMT -->
+</html>
